@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <title>Занятие 2. Задания</title>
+</head>
+<body>
+<h2>Занятие 2. Задания</h2>
+
+<p>Создайте страницу <code>index.html</code>, при открытии которой в консоль выведется с помощью
+    <code>console.log</code> результат таких выражений:</p>
+
+<ol>
+    <li>Дан массив: <code>[&#39;jazz&#39;, &#39;rock&#39;, &#39;pop&#39;, &#39;r&amp;b&#39;, &#39;lounge&#39;]</code>,
+        необходимо вывести в консоль <code>true</code> если массив содержит <code>&#39;jazz&#39;</code> и
+        <code>false</code> — если такой элемент отсутствует.
+        <h3>Check the console for the result</h3>
+        <script>
+            var array = ['jazz', 'rock', 'pop', 'r&b', 'lounge'];
+            var needed_word = 'jazz'
+            if (array.indexOf(needed_word) >= 0) {
+                console.log('Is a word ' + needed_word + ' is a part of the array? ' + 'true');
+            } else {
+                console.log('Is a word ' + needed_word + ' is a part of the array? ' + 'false');
+            }
+        </script>
+    </li>
+    <li>Дан объект:</li>
+</ol>
+
+<pre><code>var site = {
+    pages: [
+    {
+    id: 1,
+    name: &#39;Home Page&#39;,
+    url: &#39;/&#39;
+    },
+    {
+    id: 2,
+    name: &#39;Contact Page&#39;,
+    url: &#39;/contact&#39;
+    },
+    {
+    id: 3,
+    name: &#39;About Page&#39;,
+    url: &#39;/about&#39;
+    },
+    {
+    id: 4,
+    name: &#39;Photo Page&#39;,
+    url: &#39;/catalog&#39;,
+    photos: [
+    {
+    name: &#39;holidays&#39;,
+    url: &#39;/photos/holiday.jpg&#39;
+    },
+    {
+    name: &#39;Egupt&#39;,
+    url: &#39;/photos/egupt.jpg&#39;
+    },
+    {
+    name: &#39;Germany&#39;,
+    url: &#39;/photos/germany.jpg&#39;
+    }
+    ]
+    },
+    ]
+    }
+</code></pre>
+
+<p>Необходимо вывести в консоль название последней фотографии из страницы <code>&quot;Photos&quot;</code> из данного
+    объекта, т.е. <code>&#39;Germany&#39;</code>, построив правильный запрос к нужному свойству.</p>
+
+<h3>Check the console for the result</h3>
+
+<p>По возможности сделайте первую часть задания в теге <code>&lt;script&gt;</code> на странице, а вторую в виде
+    отдельного файла <code>script.js</code>.</p>
+
+
+
+<script src=js/task2.js></script>
+
+</body>
+</html>
+

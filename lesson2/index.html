@@ -19,12 +19,8 @@
         <h3>Check the console for the result</h3>
         <script>
             var array = ['jazz', 'rock', 'pop', 'r&b', 'lounge'];
-            var needed_word = 'jazz'
-            if (array.indexOf(needed_word) >= 0) {
-                console.log('Is a word ' + needed_word + ' is a part of the array? ' + 'true');
-            } else {
-                console.log('Is a word ' + needed_word + ' is a part of the array? ' + 'false');
-            }
+            var needed_word = 'jazz';
+            console.log('Is a word ' + needed_word + ' is a part of the array? ' + (array.indexOf(needed_word) >= 0).toString());
         </script>
     </li>
     <li>Дан объект:</li>

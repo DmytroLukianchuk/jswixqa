@@ -7,7 +7,7 @@
     <title>Занятие 2. Задания</title>
 </head>
 <body>
-<h2>Занятие 2. Задания</h2>
+<h2>Занятие 2.</h2>
 
 <p>Создайте страницу <code>index.html</code>, при открытии которой в консоль выведется с помощью
     <code>console.log</code> результат таких выражений:</p>
@@ -18,6 +18,7 @@
         <code>false</code> — если такой элемент отсутствует.
         <h3>Check the console for the result</h3>
         <script>
+            console.log("Task 2.1");
             var array = ['jazz', 'rock', 'pop', 'r&b', 'lounge'];
             var needed_word = 'jazz';
             console.log('Is a word ' + needed_word + ' is a part of the array? ' + (array.indexOf(needed_word) >= 0));
@@ -74,9 +75,41 @@
 <p>По возможности сделайте первую часть задания в теге <code>&lt;script&gt;</code> на странице, а вторую в виде
     отдельного файла <code>script.js</code>.</p>
 
+<h2>Занятие 3.</h2>
+<h3>3.1</h3>
+
+<p>Необходимо создать функцию Welcome которая будет принимать 2 аргумента — имя и фамилия, и выводить в консоль
+    сообщение "Приветствую, Имя Фамилия" со значениями из аргументов.
+
+<h3>Check the console for the result</h3>
+
+<h3>3.2</h3>
+
+<p> Дополнительно: сделать так чтобы функция принимали только строки в качестве аргументов, в противном случае выводила
+    в консоль сообщение об ошибке.</p>
+
+<h3>Check the console for the result</h3>
+
+<h2>Занятие 4.</h2>
+<h3>4.1</h3>
+
+<p>Напишите функцию arraySearch для поиска в массиве, при нахождении элемента она должна возвращать true, и если не
+    найдет — false.
+    <code>arraySearch(['alien', 'zombie', 'vampire'], 'zombie'); // true</code> <br/>
+    <code>arraySearch(['alien', 'zombie', 'vampire'], 'alien'); // true</code><br/>
+    <code>arraySearch(['alien', 'zombie', 'vampire'], 'human'); // false</code><br/></p>
+
+<h3>4.2</h3>
+
+<p>Дополнительно: сделать проверку на вхождение в строке, если элемент массива - строка:<br/>
+    <code>arraySearch([23, 'vampire', true, 'alien'], 'vam'); // true</code></p>
+
+<h3>Check the console for the result</h3>
 
 
 <script src=js/task2.js></script>
+<script src=js/task3.js></script>
+<script src=js/task4.js></script>
 
 </body>
 </html>

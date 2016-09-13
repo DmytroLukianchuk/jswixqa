@@ -6,15 +6,12 @@
  changeArguments(1,2,3); // ['arg-1', 'arg-2', 'arg-3']
  */
 
-function changeArguments(arg1, arg2, arg3) {
-    var arr = [arg1, arg2, arg3];
+function changeArguments(arr) {
+    var result = [];
 
-    arr.forEach(function (element, index) {
-        arr[index] = "arg-" + element
-    });
-    return arr;
+    arr.forEach(e => result.push("arg-" + e));
+    return result;
 }
 
 console.log("Task 5.1");
-console.log(changeArguments(1, 2, 3));
-
+console.log(changeArguments([1, 2, 3, 4, 5]));

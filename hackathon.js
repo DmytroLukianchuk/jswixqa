@@ -1,6 +1,17 @@
 var score = 0;
+var questionnumber = 1;
 
 export function nextquestion_onClick_1(event) {
+    if ($w("#nextquestion").label == "Restart") {
+        questionnumber = 0;
+        $w("#score").text = 0;
+        $w("#questionnumber").text = questionnumber;
+        $w("#nextquestion").label = "Nest Question";
+    }
+
+    questionnumber ++;
+    $w("#questionnumber").text = questionnumber;
+
     $w("#controller1").next().then(function () {
         var random_pop = function (seq) {
             var index = Math.floor(Math.random() * seq.length);
@@ -44,11 +55,11 @@ export function avisible_onClick(event) {
         score += 100;
         $w("#score").text = score;
 
-        console.log(score)
     } else {
         $w("#avisible").hide();
         $w("#wrongtbutton").show();
         $w("#wrongtbutton").label = $w("#avisible").label;
+        $w("#nextquestion").label = "Restart"
     }
 }
 
@@ -59,12 +70,11 @@ export function bvisible_onClick_1(event) {
         $w("#correctbutton").label = $w("#bvisible").label;
         score += 100;
         $w("#score").text = score;
-
-        console.log(score)
     } else {
         $w("#avisible").hide();
         $w("#wrongtbutton").show();
         $w("#wrongtbutton").label = $w("#avisible").label;
+        $w("#nextquestion").label = "Restart"
     }
 }
 
@@ -81,6 +91,7 @@ export function cvisible_onClick_1(event) {
         $w("#cvisible").hide();
         $w("#wrongtbutton").show();
         $w("#wrongtbutton").label = $w("#cvisible").label;
+        $w("#nextquestion").label = "Restart"
     }
 }
 
@@ -92,11 +103,11 @@ export function dvisible_onClick_1(event) {
         score += 100;
         $w("#score").text = score;
 
-        console.log(score)
     } else {
         $w("#dvisible").hide();
         $w("#wrongtbutton").show();
         $w("#wrongtbutton").label = $w("#avisible").label;
+        $w("#nextquestion").label = "Restart"
     }
 }
 

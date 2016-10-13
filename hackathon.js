@@ -30,10 +30,31 @@ export function nextquestion_onClick(event) {
 
         $w("#questionvisible").text = $w("#questionhidden").text;
 
-        $w("#avisible").label = random_pop(answers_arr);
+   /*     $w("#avisible").label = random_pop(answers_arr);
         $w("#bvisible").label = random_pop(answers_arr);
         $w("#cvisible").label = random_pop(answers_arr);
         $w("#dvisible").label = random_pop(answers_arr);
+   */
+        var random_one = random_pop(answers_arr);
+        var random_two = random_pop(answers_arr);
+        var random_three = random_pop(answers_arr);
+        var random_four = random_pop(answers_arr);
+
+        $w("#avisible").label = random_one;
+        $w("#acorrectanswer").label = random_one;
+        $w("#awronganswer").label = random_one;
+
+        $w("#bvisible").label = random_two;
+        $w("#bcorrectanswer").label = random_two;
+        $w("#bwronganswer").label = random_two;
+
+        $w("#cvisible").label = random_three;
+        $w("#ccorrectanswer").label = random_three;
+        $w("#cwronganswer").label = random_three;
+
+        $w("#dvisible").label = random_four;
+        $w("#dcorrectanswer").label = random_four;
+        $w("#dwronganswer").label = random_four;
 
 // show all buttons for next tour and hide wrong / correct
         $w("#avisible").show();
@@ -52,71 +73,56 @@ export function nextquestion_onClick(event) {
 
         $w("#dcorrectanswer").hide();
         $w("#dwronganswer").hide();
-
     })
-
 }
 
 export function avisible_onClick(event) {
+    $w("#avisible").hide();
     if ($w("#avisible").label == $w("#dhidden").label) {
-        $w("#avisible").hide();
         $w("#acorrectanswer").show();
-        $w("#acorrectanswer").label = $w("#ahidden").label;
         score += 100;
         $w("#score").text = score;
 
     } else {
-        $w("#avisible").hide();
         $w("#awronganswer").show();
-        $w("#awronganswer").label = $w("#ahidden").label;
         $w("#nextquestion").label = "Restart"
     }
 }
 
 export function bvisible_onClick(event) {
+    $w("#bvisible").hide();
     if ($w("#bvisible").label == $w("#dhidden").label) {
-        $w("#bvisible").hide();
         $w("#bcorrectanswer").show();
-        $w("#bcorrectanswer").label = $w("bhidden").label;
         score += 100;
         $w("#score").text = score;
     } else {
-        $w("#avisible").hide();
         $w("#bwronganswer").show();
-        $w("#bwronganswer").label = $w("#bhidden").label;
         $w("#nextquestion").label = "Restart"
     }
 }
 
 export function cvisible_onClick(event) {
+    $w("#cvisible").hide();
     if ($w("#cvisible").label == $w("#dhidden").label) {
-        $w("#cvisible").hide();
         $w("#ccorrectanswer").show();
-        $w("#ccorrectanswer").label = $w("chidden").label;
         score += 100;
         $w("#score").text = score;
-        console.log(score)
 
     } else {
-        $w("#cvisible").hide();
         $w("#cwronganswer").show();
-        $w("#cwronganswer").label = $w("#chidden").label;
         $w("#nextquestion").label = "Restart"
     }
 }
 
 export function dvisible_onClick(event) {
+    $w("#dvisible").hide();
     if ($w("#dvisible").label == $w("#dhidden").label) {
-        $w("#dcorrectanswer").label = $w("dvisible").label;
-        $w("#dvisible").hide();
         $w("#dcorrectanswer").show();
         score += 100;
         $w("#score").text = score;
 
     } else {
-        $w("#dvisible").hide();
         $w("#dwronganswer").show();
-        $w("#dwronganswer").label = $w("#dhidden").label;
         $w("#nextquestion").label = "Restart"
     }
 }
@@ -146,4 +152,14 @@ export function startgame_onClick(event) {
     $w("#bvisible").label = $w("#bhidden").label;
     $w("#cvisible").label = $w("#chidden").label;
     $w("#dvisible").label = $w("#dhidden").label;
+
+    $w("#acorrectanswer").label = $w("#ahidden").label;
+    $w("#bcorrectanswer").label = $w("#bhidden").label;
+    $w("#ccorrectanswer").label = $w("#chidden").label;
+    $w("#dcorrectanswer").label = $w("#dhidden").label;
+
+    $w("#awronganswer").label = $w("#ahidden").label;
+    $w("#bwronganswer").label = $w("#bhidden").label;
+    $w("#cwronganswer").label = $w("#chidden").label;
+    $w("#dwronganswer").label = $w("#dhidden").label;
 }

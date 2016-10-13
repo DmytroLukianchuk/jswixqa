@@ -103,7 +103,7 @@ export function avisible_onClick(event) {
         score += 100000;
         $w("#score").text = score;
 
-        if (score === 300000) {
+        if (score === 1000000) {
             $w("#winnerpic").show();
             $w("#nextquestion").label = "Restart"
         }
@@ -123,7 +123,7 @@ export function bvisible_onClick(event) {
         score += 100000;
         $w("#score").text = score;
 
-        if (score === 300000) {
+        if (score === 1000000) {
             $w("#winnerpic").show();
             $w("#nextquestion").label = "Restart"
         }
@@ -143,7 +143,7 @@ export function cvisible_onClick(event) {
         score += 100000;
         $w("#score").text = score;
 
-        if (score === 300000) {
+        if (score === 1000000) {
             $w("#winnerpic").show();
             $w("#nextquestion").label = "Restart"
         }
@@ -163,7 +163,7 @@ export function dvisible_onClick(event) {
         score += 100000;
         $w("#score").text = score;
 
-        if (score === 300000) {
+        if (score === 1000000) {
             $w("#winnerpic").show();
             $w("#nextquestion").label = "Restart"
         }

@@ -1,7 +1,7 @@
 var score = 0;
 var questionnumber = 1;
 
-export function nextquestion_onClick_1(event) {
+export function nextquestion_onClick(event) {
     if ($w("#nextquestion").label == "Restart") {
         questionnumber = 0;
         $w("#score").text = 0;
@@ -12,7 +12,7 @@ export function nextquestion_onClick_1(event) {
     questionnumber ++;
     $w("#questionnumber").text = questionnumber;
 
-    $w("#controller1").next().then(function () {
+    $w("#controller2").next().then(function () {
         var random_pop = function (seq) {
             var index = Math.floor(Math.random() * seq.length);
             var result = seq[index];
@@ -35,14 +35,24 @@ export function nextquestion_onClick_1(event) {
         $w("#cvisible").label = random_pop(answers_arr);
         $w("#dvisible").label = random_pop(answers_arr);
 
-// show all buttons for next tour
+// show all buttons for next tour and hide wrong / correct
         $w("#avisible").show();
         $w("#bvisible").show();
         $w("#cvisible").show();
         $w("#dvisible").show();
 
-        $w("#correctbutton").hide();
-        $w("#wrongtbutton").hide();
+        $w("#acorrectanswer").hide();
+        $w("#awronganswer").hide();
+
+        $w("#bcorrectanswer").hide();
+        $w("#bwronganswer").hide();
+
+        $w("#ccorrectanswer").hide();
+        $w("#cwronganswer").hide();
+
+        $w("#dcorrectanswer").hide();
+        $w("#dwronganswer").hide();
+
     })
 
 }
@@ -50,69 +60,83 @@ export function nextquestion_onClick_1(event) {
 export function avisible_onClick(event) {
     if ($w("#avisible").label == $w("#dhidden").label) {
         $w("#avisible").hide();
-        $w("#correctbutton").show();
-        $w("#correctbutton").label = $w("#avisible").label;
+        $w("#acorrectanswer").show();
+        $w("#acorrectanswer").label = $w("#ahidden").label;
         score += 100;
         $w("#score").text = score;
 
     } else {
         $w("#avisible").hide();
-        $w("#wrongtbutton").show();
-        $w("#wrongtbutton").label = $w("#avisible").label;
+        $w("#awronganswer").show();
+        $w("#awronganswer").label = $w("#ahidden").label;
         $w("#nextquestion").label = "Restart"
     }
 }
 
-export function bvisible_onClick_1(event) {
+export function bvisible_onClick(event) {
     if ($w("#bvisible").label == $w("#dhidden").label) {
         $w("#bvisible").hide();
-        $w("#correctbutton").show();
-        $w("#correctbutton").label = $w("#bvisible").label;
+        $w("#bcorrectanswer").show();
+        $w("#bcorrectanswer").label = $w("bhidden").label;
         score += 100;
         $w("#score").text = score;
     } else {
         $w("#avisible").hide();
-        $w("#wrongtbutton").show();
-        $w("#wrongtbutton").label = $w("#avisible").label;
+        $w("#bwronganswer").show();
+        $w("#bwronganswer").label = $w("#bhidden").label;
         $w("#nextquestion").label = "Restart"
     }
 }
 
-export function cvisible_onClick_1(event) {
+export function cvisible_onClick(event) {
     if ($w("#cvisible").label == $w("#dhidden").label) {
         $w("#cvisible").hide();
-        $w("#correctbutton").show();
-        $w("#correctbutton").label = $w("#cvisible").label;
+        $w("#ccorrectanswer").show();
+        $w("#ccorrectanswer").label = $w("chidden").label;
         score += 100;
         $w("#score").text = score;
         console.log(score)
 
     } else {
         $w("#cvisible").hide();
-        $w("#wrongtbutton").show();
-        $w("#wrongtbutton").label = $w("#cvisible").label;
+        $w("#cwronganswer").show();
+        $w("#cwronganswer").label = $w("#chidden").label;
         $w("#nextquestion").label = "Restart"
     }
 }
 
-export function dvisible_onClick_1(event) {
+export function dvisible_onClick(event) {
     if ($w("#dvisible").label == $w("#dhidden").label) {
+        $w("#dcorrectanswer").label = $w("dvisible").label;
         $w("#dvisible").hide();
-        $w("#correctbutton").show();
-        $w("#correctbutton").label = $w("#dvisible").label;
+        $w("#dcorrectanswer").show();
         score += 100;
         $w("#score").text = score;
 
     } else {
         $w("#dvisible").hide();
-        $w("#wrongtbutton").show();
-        $w("#wrongtbutton").label = $w("#avisible").label;
+        $w("#dwronganswer").show();
+        $w("#dwronganswer").label = $w("#dhidden").label;
         $w("#nextquestion").label = "Restart"
     }
 }
 
-export function startgame_onClick_1(event) {
+export function startgame_onClick(event) {
     console.log("START GAME");
+
+    // show elements right after Start Game
+    $w("#startgame").hide();
+    $w("#avisible").show();
+    $w("#bvisible").show();
+    $w("#cvisible").show();
+    $w("#dvisible").show();
+    $w("#nextquestion").show();
+    $w("#score").show();
+    $w("#youhave").show();
+    $w("#maxquestion").show();
+    $w("#questionnumber").show();
+    $w("#questionbox").show();
+    $w("#questionvisible").show();
 
     $w("#questionvisible").text = $w("#questionhidden").text;
 

@@ -9,9 +9,9 @@ $w.onReady(function () {
 
 
 export function nextquestion_onClick(event) {
-    $w("#nextquestion").hide();
-
     if ($w("#nextquestion").label == "Restart") {
+        $w("#nextquestion").hide();
+        $w("#winnerpic").hide();
         questionnumber = 0;
         $w("#score").text = 0;
         $w("#questionnumber").text = questionnumber;
@@ -89,6 +89,11 @@ export function avisible_onClick(event) {
         score += 100;
         $w("#score").text = score;
 
+        if (score === 300) {
+            $w("#winnerpic").show();
+            $w("#nextquestion").label = "Restart"
+        }
+
     } else {
         $w("#awronganswer").show();
         $w("#nextquestion").label = "Restart"
@@ -103,6 +108,12 @@ export function bvisible_onClick(event) {
         $w("#bcorrectanswer").show();
         score += 100;
         $w("#score").text = score;
+
+        if (score === 300) {
+            $w("#winnerpic").show();
+            $w("#nextquestion").label = "Restart"
+        }
+
     } else {
         $w("#bwronganswer").show();
         $w("#nextquestion").label = "Restart"
@@ -118,6 +129,11 @@ export function cvisible_onClick(event) {
         score += 100;
         $w("#score").text = score;
 
+        if (score === 300) {
+            $w("#winnerpic").show();
+            $w("#nextquestion").label = "Restart"
+        }
+
     } else {
         $w("#cwronganswer").show();
         $w("#nextquestion").label = "Restart"
@@ -132,6 +148,11 @@ export function dvisible_onClick(event) {
         $w("#dcorrectanswer").show();
         score += 100;
         $w("#score").text = score;
+
+        if (score === 300) {
+            $w("#winnerpic").show();
+            $w("#nextquestion").label = "Restart"
+        }
 
     } else {
         $w("#dwronganswer").show();

@@ -1,6 +1,13 @@
 var score = 0;
 var questionnumber = 1;
 
+$w.onReady(function () {
+    setTimeout(function(){
+        $w("#startgame").show();
+    }, 3000);
+});
+
+
 export function nextquestion_onClick(event) {
     $w("#nextquestion").hide();
 
@@ -139,7 +146,7 @@ export function startgame_onClick(event) {
     $w("#bvisible").show();
     $w("#cvisible").show();
     $w("#dvisible").show();
-    // $w("#nextquestion").show();
+
     $w("#score").show();
     $w("#youhave").show();
     $w("#maxquestion").show();

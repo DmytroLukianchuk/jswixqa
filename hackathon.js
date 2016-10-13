@@ -118,23 +118,7 @@ export function avisible_onClick(event) {
 }
 
 export function bvisible_onClick(event) {
-    $w("#bvisible").hide();
-    $w("#nextquestion").show();
-
-    if ($w("#bvisible").label == $w("#dhidden").label) {
-        $w("#bcorrectanswer").show();
-        score += 100000;
-        $w("#score").text = score;
-
-        if (score === 1000000) {
-            $w("#winnerpic").show();
-            $w("#nextquestion").label = "Restart"
-        }
-
-    } else {
-        $w("#bwronganswer").show();
-        $w("#nextquestion").label = "Restart"
-    }
+    button_visible_onClick("#bvisible", "#bcorrectanswer", "#bwronganswer");
 }
 
 export function cvisible_onClick(event) {

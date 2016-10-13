@@ -1,3 +1,5 @@
+import wixData from 'wix-data';
+
 var score = 0;
 var questionnumber = 1;
 
@@ -7,6 +9,17 @@ $w.onReady(function () {
     }, 2000);
 });
 
+function eraseCollection() {
+    wixData.query("questions")
+        .find()
+        .then((result) => {
+            for (var i = 0; i < result.items.length; i++){
+                if (result.items[i] === null) continue;
+                wixData.remove("questions", result.items[i]._id);
+            }
+            console.log('erase done');
+        });
+}
 
 export function nextquestion_onClick(event) {
     if ($w("#nextquestion").label == "Restart") {
@@ -16,7 +29,7 @@ export function nextquestion_onClick(event) {
         $w("#score").text = score;
 
         $w("#questionnumber").text = questionnumber;
-        $w("#nextquestion").label = "Nest Question";
+        $w("#nextquestion").label = "Next Question";
     }
 
     questionnumber ++;
@@ -194,4 +207,20 @@ export function startgame_onClick(event) {
     $w("#bwronganswer").label = $w("#bhidden").label;
     $w("#cwronganswer").label = $w("#chidden").label;
     $w("#dwronganswer").label = $w("#dhidden").label;
+}
+
+function eraseCollection() {
+    wixData.query("questions")
+        .find()
+        .then((result) => {
+            for (var i = 0; i < result.items.length; i++){
+                if (result.items[i] === null) continue;
+                wixData.remove("questions", result.items[i]._id);
+            }
+            console.log('erase done');
+        });
+}
+
+export function database(event) {
+    eraseCollection();
 }

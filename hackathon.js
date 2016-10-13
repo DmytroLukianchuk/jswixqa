@@ -4,7 +4,7 @@ var questionnumber = 1;
 $w.onReady(function () {
     setTimeout(function(){
         $w("#startgame").show();
-    }, 3000);
+    }, 2000);
 });
 
 
@@ -12,8 +12,9 @@ export function nextquestion_onClick(event) {
     if ($w("#nextquestion").label == "Restart") {
         $w("#nextquestion").hide();
         $w("#winnerpic").hide();
-        questionnumber = 0;
-        $w("#score").text = 0;
+        questionnumber = score = 0;
+        $w("#score").text = score;
+
         $w("#questionnumber").text = questionnumber;
         $w("#nextquestion").label = "Nest Question";
     }
@@ -86,10 +87,10 @@ export function avisible_onClick(event) {
 
     if ($w("#avisible").label == $w("#dhidden").label) {
         $w("#acorrectanswer").show();
-        score += 100;
+        score += 100000;
         $w("#score").text = score;
 
-        if (score === 300) {
+        if (score === 300000) {
             $w("#winnerpic").show();
             $w("#nextquestion").label = "Restart"
         }
@@ -106,10 +107,10 @@ export function bvisible_onClick(event) {
 
     if ($w("#bvisible").label == $w("#dhidden").label) {
         $w("#bcorrectanswer").show();
-        score += 100;
+        score += 100000;
         $w("#score").text = score;
 
-        if (score === 300) {
+        if (score === 300000) {
             $w("#winnerpic").show();
             $w("#nextquestion").label = "Restart"
         }
@@ -126,10 +127,10 @@ export function cvisible_onClick(event) {
 
     if ($w("#cvisible").label == $w("#dhidden").label) {
         $w("#ccorrectanswer").show();
-        score += 100;
+        score += 100000;
         $w("#score").text = score;
 
-        if (score === 300) {
+        if (score === 300000) {
             $w("#winnerpic").show();
             $w("#nextquestion").label = "Restart"
         }
@@ -146,10 +147,10 @@ export function dvisible_onClick(event) {
 
     if ($w("#dvisible").label == $w("#dhidden").label) {
         $w("#dcorrectanswer").show();
-        score += 100;
+        score += 100000;
         $w("#score").text = score;
 
-        if (score === 300) {
+        if (score === 300000) {
             $w("#winnerpic").show();
             $w("#nextquestion").label = "Restart"
         }

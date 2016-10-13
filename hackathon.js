@@ -122,43 +122,11 @@ export function bvisible_onClick(event) {
 }
 
 export function cvisible_onClick(event) {
-    $w("#cvisible").hide();
-    $w("#nextquestion").show();
-
-    if ($w("#cvisible").label == $w("#dhidden").label) {
-        $w("#ccorrectanswer").show();
-        score += 100000;
-        $w("#score").text = score;
-
-        if (score === 1000000) {
-            $w("#winnerpic").show();
-            $w("#nextquestion").label = "Restart"
-        }
-
-    } else {
-        $w("#cwronganswer").show();
-        $w("#nextquestion").label = "Restart"
-    }
+    button_visible_onClick("#cvisible", "#ccorrectanswer", "#cwronganswer");
 }
 
 export function dvisible_onClick(event) {
-    $w("#dvisible").hide();
-    $w("#nextquestion").show();
-
-    if ($w("#dvisible").label == $w("#dhidden").label) {
-        $w("#dcorrectanswer").show();
-        score += 100000;
-        $w("#score").text = score;
-
-        if (score === 1000000) {
-            $w("#winnerpic").show();
-            $w("#nextquestion").label = "Restart"
-        }
-
-    } else {
-        $w("#dwronganswer").show();
-        $w("#nextquestion").label = "Restart"
-    }
+    button_visible_onClick("#dvisible", "#dcorrectanswer", "#dwronganswer");
 }
 
 export function startgame_onClick(event) {

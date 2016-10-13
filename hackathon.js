@@ -94,12 +94,12 @@ export function nextquestion_onClick(event) {
     })
 }
 
-export function avisible_onClick(event) {
-    $w("#avisible").hide();
+export function button_visible_onClick(id_visible_button, id_correct_answer, id_wrong_answer) {
+    $w(id_visible_button).hide();
     $w("#nextquestion").show();
 
-    if ($w("#avisible").label == $w("#dhidden").label) {
-        $w("#acorrectanswer").show();
+    if ($w(id_visible_button).label == $w("#dhidden").label) {
+        $w(id_correct_answer).show();
         score += 100000;
         $w("#score").text = score;
 
@@ -109,9 +109,12 @@ export function avisible_onClick(event) {
         }
 
     } else {
-        $w("#awronganswer").show();
+        $w(id_wrong_answer).show();
         $w("#nextquestion").label = "Restart"
     }
+}
+export function avisible_onClick(event) {
+    button_visible_onClick("#avisible", "#acorrectanswer", "#awronganswer");
 }
 
 export function bvisible_onClick(event) {

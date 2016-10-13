@@ -2,6 +2,8 @@ var score = 0;
 var questionnumber = 1;
 
 export function nextquestion_onClick(event) {
+    $w("#nextquestion").hide();
+
     if ($w("#nextquestion").label == "Restart") {
         questionnumber = 0;
         $w("#score").text = 0;
@@ -30,11 +32,6 @@ export function nextquestion_onClick(event) {
 
         $w("#questionvisible").text = $w("#questionhidden").text;
 
-   /*     $w("#avisible").label = random_pop(answers_arr);
-        $w("#bvisible").label = random_pop(answers_arr);
-        $w("#cvisible").label = random_pop(answers_arr);
-        $w("#dvisible").label = random_pop(answers_arr);
-   */
         var random_one = random_pop(answers_arr);
         var random_two = random_pop(answers_arr);
         var random_three = random_pop(answers_arr);
@@ -78,6 +75,8 @@ export function nextquestion_onClick(event) {
 
 export function avisible_onClick(event) {
     $w("#avisible").hide();
+    $w("#nextquestion").show();
+
     if ($w("#avisible").label == $w("#dhidden").label) {
         $w("#acorrectanswer").show();
         score += 100;
@@ -91,6 +90,8 @@ export function avisible_onClick(event) {
 
 export function bvisible_onClick(event) {
     $w("#bvisible").hide();
+    $w("#nextquestion").show();
+
     if ($w("#bvisible").label == $w("#dhidden").label) {
         $w("#bcorrectanswer").show();
         score += 100;
@@ -103,6 +104,8 @@ export function bvisible_onClick(event) {
 
 export function cvisible_onClick(event) {
     $w("#cvisible").hide();
+    $w("#nextquestion").show();
+
     if ($w("#cvisible").label == $w("#dhidden").label) {
         $w("#ccorrectanswer").show();
         score += 100;
@@ -116,6 +119,8 @@ export function cvisible_onClick(event) {
 
 export function dvisible_onClick(event) {
     $w("#dvisible").hide();
+    $w("#nextquestion").show();
+
     if ($w("#dvisible").label == $w("#dhidden").label) {
         $w("#dcorrectanswer").show();
         score += 100;
@@ -128,15 +133,13 @@ export function dvisible_onClick(event) {
 }
 
 export function startgame_onClick(event) {
-    console.log("START GAME");
-
     // show elements right after Start Game
     $w("#startgame").hide();
     $w("#avisible").show();
     $w("#bvisible").show();
     $w("#cvisible").show();
     $w("#dvisible").show();
-    $w("#nextquestion").show();
+    // $w("#nextquestion").show();
     $w("#score").show();
     $w("#youhave").show();
     $w("#maxquestion").show();
